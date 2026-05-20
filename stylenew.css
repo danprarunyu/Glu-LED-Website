@@ -1,0 +1,887 @@
+/* ════════════════════════════════════════
+   style.css — GLU Innovation LED Solutions
+   ════════════════════════════════════════ */
+
+/* ── ตัวแปรสีและฟอนต์หลัก ── */
+:root {
+    --primary:      #00e5ff;          /* สีหลัก cyan */
+    --primary-dim:  rgba(0,229,255,0.12);
+    --primary-glow: rgba(0,229,255,0.35);
+    --bg-dark:      #0a0a0a;          /* พื้นหลังหลัก */
+    --bg-accent:    #111111;          /* พื้นหลังรอง */
+    --bg-card:      #131313;          /* พื้นหลังการ์ด */
+    --text-light:   #f4f4f4;          /* ตัวอักษรหลัก */
+    --text-muted:   #888;             /* ตัวอักษรรอง */
+    --border:       #222;             /* สีเส้นขอบ */
+}
+
+/* ── รีเซ็ต CSS พื้นฐาน ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+/* ════════════════════════════════════════
+   แถบนำทาง (Header / Navigation)
+   ════════════════════════════════════════ */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 50px;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+/* โลโก้ glu. */
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+/* เมนูนำทาง */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--primary); }
+
+/* ปุ่มติดต่อเรา */
+.btn-contact {
+    background: var(--primary);
+    color: #000 !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.btn-contact:hover {
+    background: #00bcd4 !important;
+    color: #000 !important;
+}
+
+/* ปุ่มเมนู hamburger (มือถือ) */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--primary);
+    cursor: pointer;
+    margin-left: auto; /* ชิดขวา */
+}
+
+
+/* ════════════════════════════════════════
+   โครงสร้าง Section ทั่วไป
+   ════════════════════════════════════════ */
+section { padding: 100px 20px; }
+
+.section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ป้ายกำกับเหนือหัวข้อ (เช่น "บริการของเรา") */
+.section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* หัวข้อหลักของแต่ละ section */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-title span { color: var(--primary); }
+
+/* คำอธิบายใต้หัวข้อ */
+.section-desc {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    color: #bbb;
+    text-align: center;
+}
+
+
+/* ════════════════════════════════════════
+   หน้าแรก (Hero Banner)
+   ════════════════════════════════════════ */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+                url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&q=80')
+                no-repeat center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+/* แสงไฟ cyan กลางหน้า */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(0,229,255,0.06) 0%, transparent 70%);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.hero h1 span {
+    color: var(--primary);
+    display: block;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #bbb;
+    position: relative;
+}
+
+
+/* ════════════════════════════════════════
+   กริด 3 คอลัมน์ + การ์ด (Solutions / Why Us)
+   ════════════════════════════════════════ */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,229,255,0.08);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+
+/* ════════════════════════════════════════
+   ตัวเลขสถิติ (Stats Counter)
+   ════════════════════════════════════════ */
+#stats { background: var(--bg-dark); padding: 80px 20px; }
+
+/* กริด 4 ช่อง */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #1c1c1c;
+    border: 1px solid #1c1c1c;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stat-card {
+    background: #0f0f0f;
+    padding: 44px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* เส้นไฟ cyan ด้านล่างการ์ด (แสดงเมื่อ scroll มาถึง) */
+.stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.7s ease;
+}
+
+.stat-card.animated::after { transform: scaleX(1); }
+
+.stat-icon {
+    font-size: 26px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+/* ตัวเลขขนาดใหญ่ */
+.stat-number {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-number .unit {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+/* ป้ายชื่อใต้ตัวเลข */
+.stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* ════════════════════════════════════════
+   โชว์เคสผลงาน (Portfolio)
+   ════════════════════════════════════════ */
+#portfolio { background: var(--bg-dark); }
+
+/* ปุ่ม Filter */
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 8px 22px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    font-family: 'Prompt', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+.filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+    font-weight: 600;
+}
+
+/* กริดแสดงผลงาน */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: #111;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.portfolio-item.hidden { display: none; }
+
+/* พื้นหลังการ์ดผลงาน */
+.portfolio-thumb {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-thumb { transform: scale(1.07); }
+
+/* overlay ที่โผล่เมื่อ hover */
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+}
+
+.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+.p-cat {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.p-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+}
+
+.p-size { font-size: 12px; color: #999; }
+
+
+/* ════════════════════════════════════════
+   แผนที่พื้นที่ให้บริการ (Interactive Map)
+   ════════════════════════════════════════ */
+#map-section { background: var(--bg-accent); padding: 100px 20px; }
+
+/* Layout แผนที่ + รายการจังหวัด */
+.map-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 36px;
+    align-items: start;
+}
+
+/* กล่องแผนที่ SVG */
+.map-box {
+    background: #0d0d0d;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+}
+
+#th-map { width: 100%; height: 100%; display: block; }
+
+/* คำอธิบายสี pin ด้านล่างแผนที่ */
+.map-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: #888;
+}
+
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; }
+
+/* แผงรายการจังหวัดด้านขวา */
+.loc-panel {
+    background: #0d0d0d;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.loc-panel-head {
+    padding: 14px 18px;
+    background: #111;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* รายการจังหวัด (scroll ได้) */
+.loc-list {
+    list-style: none;
+    max-height: 520px;
+    overflow-y: auto;
+}
+
+.loc-list::-webkit-scrollbar { width: 4px; }
+.loc-list::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+.loc-item {
+    padding: 16px 18px;
+    border-bottom: 1px solid #181818;
+    cursor: pointer;
+    transition: background 0.15s;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.loc-item:hover { background: #141414; }
+
+/* รายการที่เลือกอยู่ */
+.loc-item.active {
+    background: #0d1a1a;
+    border-left: 3px solid var(--primary);
+}
+
+.loc-dot-sm {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.loc-name { font-size: 14px; font-weight: 600; color: #e0e0e0; margin-bottom: 2px; }
+.loc-desc { font-size: 12px; color: #666; }
+
+.loc-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+/* pin บนแผนที่ SVG */
+.map-pin { cursor: pointer; }
+.map-pin circle { transition: r 0.2s; }
+.map-pin:hover circle:nth-child(2) { r: 7; }
+
+
+/* ════════════════════════════════════════
+   ติดต่อเรา (Contact)
+   ════════════════════════════════════════ */
+#contact { background: #000; text-align: center; padding: 100px 20px; }
+#contact .section-title { font-size: 2.8rem; }
+#contact p { color: #aaa; margin-bottom: 30px; }
+
+.btn-line {
+    display: inline-block;
+    padding: 15px 50px;
+    background: var(--primary);
+    color: #000;
+    font-family: 'Prompt', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-line:hover { background: #00bcd4; transform: translateY(-2px); }
+
+
+/* ════════════════════════════════════════
+   Popup รายละเอียดผลงาน (Modal)
+   ════════════════════════════════════════ */
+.modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-bg.open { display: flex; }
+
+.modal-box {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    max-width: 540px;
+    width: 90%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal-head {
+    padding: 18px 24px;
+    border-bottom: 1px solid #1f1f1f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-head-title { font-size: 15px; font-weight: 600; }
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover { color: #fff; }
+
+.modal-body { padding: 24px; }
+
+/* พื้นที่รูปภาพผลงานใน modal */
+.modal-thumb {
+    width: 100%;
+    height: 200px;
+    background: #1a1a1a;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+}
+
+/* ตารางรายละเอียดผลงาน */
+.modal-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.modal-meta-item label {
+    display: block;
+    font-size: 10px;
+    color: #555;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.modal-meta-item span { font-size: 14px; color: #ddd; }
+
+
+/* ════════════════════════════════════════
+   Animation Fade In (scroll เข้ามาแล้วโผล่)
+   ════════════════════════════════════════ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s all ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ════════════════════════════════════════
+   Responsive — แท็บเล็ต (≤1024px)
+   ════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    /* Stats เหลือ 2 คอลัมน์ */
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    /* แผนที่วางแนวตั้ง */
+    .map-layout { grid-template-columns: 1fr; }
+    .map-box { aspect-ratio: 4/3; }
+}
+
+/* ════════════════════════════════════════
+   Responsive — มือถือ (≤768px)
+   ════════════════════════════════════════ */
+@media (max-width: 768px) {
+    header { padding: 15px 20px; }
+
+    /* แสดงปุ่ม hamburger */
+    .menu-toggle { display: block; }
+
+    /* ซ่อนเมนูปกติ แสดงเป็น dropdown เมื่อกด hamburger */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; right: 20px;
+        background: rgba(15,15,15,0.98);
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid #333;
+        width: 250px;
+        gap: 20px;
+        text-align: right;
+    }
+
+    nav ul.active { display: flex; }
+
+    .hero h1 { font-size: 2.2rem; }
+
+    /* กริดเหลือ 1 คอลัมน์ */
+    .grid-3          { grid-template-columns: 1fr; }
+    .portfolio-grid  { grid-template-columns: 1fr 1fr; }
+    .stats-grid      { grid-template-columns: 1fr 1fr; }
+    .section-title   { font-size: 2rem; }
+}
+
+/* ════════════════════════════════════════
+   Responsive — มือถือเล็ก (≤480px)
+   ════════════════════════════════════════ */
+@media (max-width: 480px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .stats-grid     { grid-template-columns: 1fr 1fr; }
+}
+
+
+/* ════════════════════════════════════════
+   slider.css — glu. Slider Section
+   วาง @import หรือ <link> ต่อจาก stylenew.css
+   ════════════════════════════════════════ */
+
+
+/* ════════════════════════════
+   Section wrapper
+   ════════════════════════════ */
+#slider-section {
+    background: var(--bg-dark);
+    padding: 60px 0 44px;
+    position: relative;
+    overflow: hidden;   /* กัน track โผล่ออกนอก section */
+}
+
+
+/* ════════════════════════════
+   กล่องหลัก — ซ่อน overflow
+   ════════════════════════════ */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;  /* ป้องกันเลือกข้อความตอน drag */
+}
+
+
+/* ════════════════════════════
+   แทร็กที่เลื่อน
+   ════════════════════════════ */
+.slider-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    cursor: grab;
+}
+
+/* ระหว่าง drag — ปิด transition ชั่วคราวให้ตามนิ้ว */
+.slider-track.dragging {
+    transition: none;
+    cursor: grabbing;
+}
+
+
+/* ════════════════════════════
+   แต่ละ Slide
+   ════════════════════════════ */
+.slide {
+    /*
+        ค่าเริ่มต้น: desktop แสดง 3 ช่อง
+        JS จะอัปเดต min-width ตาม breakpoint โดยอัตโนมัติ
+    */
+    min-width: calc(33.333% - 8px);
+    margin-right: 12px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: border-color 0.3s;
+}
+
+.slide:hover {
+    border-color: var(--primary-glow);
+}
+
+
+/* รูปภาพใน slide */
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.slide:hover .slide-img {
+    transform: scale(1.04);
+}
+
+
+/* ════════════════════════════
+   Overlay ข้อความด้านล่าง slide
+   ════════════════════════════ */
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 36px 20px 18px;
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* แถบ sub-label (ประเภทผลงาน) */
+.slide-sublabel {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+/* ชื่อผลงาน */
+.slide-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.3px;
+}
+
+
+/* ════════════════════════════
+   ปุ่มเลื่อนซ้าย / ขวา
+   ════════════════════════════ */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(10,10,10,0.85);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.slider-btn:hover {
+    background: var(--primary-dim);
+    border-color: var(--primary);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.slider-btn:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+/* สถานะปิดการใช้งาน (อยู่ที่ขอบสุด) */
+.slider-btn.disabled {
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+.slider-btn-prev { left: 16px; }
+.slider-btn-next { right: 16px; }
+
+
+/* ════════════════════════════
+   จุด Indicator ด้านล่าง
+   ════════════════════════════ */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 26px;
+    padding: 0 20px;
+}
+
+.slider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2e2e2e;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.25s, width 0.25s, border-radius 0.25s;
+    flex-shrink: 0;
+}
+
+/* dot ที่ active — ขยายเป็น pill */
+.slider-dot.active {
+    background: var(--primary);
+    width: 22px;
+    border-radius: 3px;
+}
+
+.slider-dot:hover:not(.active) {
+    background: #444;
+}
+
+/* ตัวนับ "1 / 5" */
+.slider-counter {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #444;
+    letter-spacing: 1.5px;
+    font-family: 'Prompt', sans-serif;
+}
+
+
+/* ════════════════════════════
+   Responsive
+   ════════════════════════════ */
+
+/* tablet — แสดง 2 ช่อง */
+@media (max-width: 1024px) {
+    .slide { min-width: calc(50% - 8px); }
+}
+
+/* มือถือ — แสดง 1 ช่อง */
+@media (max-width: 580px) {
+    .slide { min-width: 100%; margin-right: 0; }
+    .slider-btn { width: 36px; height: 36px; font-size: 15px; }
+    .slider-btn-prev { left: 8px; }
+    .slider-btn-next { right: 8px; }
+}

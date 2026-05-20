@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glu. - Innovative LED Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylenew.css">
+</head>
+<body>
+
+    <!-- ════════════════════════════
+         แถบนำทางด้านบน (Header)
+    ════════════════════════════ -->
+    <header>
+        <div class="logo">glu.</div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#about">รู้จัก glu.</a></li>
+                <li><a href="#solutions">โซลูชันจอภาพ</a></li>
+                <li><a href="#portfolio">โชว์เคสผลงาน</a></li>
+                <li><a href="#innovation">นวัตกรรม</a></li>
+                <li><a href="#why-us">ทำไมต้องเรา</a></li>
+                <li><a href="#contact" class="btn-contact">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ════════════════════════════
+         หน้าแรก (Hero Banner)
+    ════════════════════════════ -->
+    <section class="hero">
+        <h1 class="fade-in">FUTURE OF VISUAL<br><span>EXPERIENCE</span></h1>
+        <p class="fade-in">ผู้นำด้านนวัตกรรมจอ LED Solutions ครบวงจร</p>
+    </section>
+
+    <!-- ════════════════════════════
+         สไลด์โชว์ผลงาน (Slider)
+         วางระหว่าง Hero กับ About
+         ** เปลี่ยน src="" ของแต่ละ slide ใส่ path รูปจริง **
+    ════════════════════════════ -->
+    <section id="slider-section">
+
+        <!-- กล่องหลักของ Slider -->
+        <div class="slider-wrapper" id="slider-wrapper">
+
+            <!-- แทร็กที่เลื่อนซ้าย-ขวา -->
+            <div class="slider-track" id="slider-track">
+
+                <!-- Slide 1 — เปลี่ยน src="" ใส่ path รูปจริง -->
+                <div class="slide">
+                    <img src="slidept/1.png" alt="ผลงานที่ 1" class="slide-img">
+                    <div class="slide-overlay">
+                        <span class="slide-label">### หัวข้อ Slide 1</span>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="slidept/2.png" alt="ผลงานที่ 2" class="slide-img">
+                    <div class="slide-overlay">
+                        <span class="slide-label">### หัวข้อ Slide 2</span>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="slidept/3.png" alt="ผลงานที่ 3" class="slide-img">
+                    <div class="slide-overlay">
+                        <span class="slide-label">### หัวข้อ Slide 3</span>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <img src="slidept/4.png" alt="ผลงานที่ 4" class="slide-img">
+                    <div class="slide-overlay">
+                        <span class="slide-label">### หัวข้อ Slide 4</span>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <img src="slidept/5.png" alt="ผลงานที่ 5" class="slide-img">
+                    <div class="slide-overlay">
+                        <span class="slide-label">### หัวข้อ Slide 5</span>
+                    </div>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="slide">
+                    <img src="slidept/6.png" alt="ผลงานที่ 6" class="slide-img">
+                    <div class="slide-overlay">
+                        <span class="slide-label">### หัวข้อ Slide 6</span>
+                    </div>
+                </div>
+
+                <!-- Slide 7 -->
+                <div class="slide">
+                    <img src="slidept/7.png" alt="ผลงานที่ 7" class="slide-img">
+                    <div class="slide-overlay">
+                        <span class="slide-label">### หัวข้อ Slide 7</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- สิ้นสุด slider-track -->
+
+            <!-- ปุ่มเลื่อนซ้าย -->
+            <button class="slider-btn slider-btn-prev" id="slider-prev">&#8592;</button>
+
+            <!-- ปุ่มเลื่อนขวา -->
+            <button class="slider-btn slider-btn-next" id="slider-next">&#8594;</button>
+
+        </div>
+        <!-- สิ้นสุด slider-wrapper -->
+
+        <!-- จุดบอกตำแหน่ง Slide ด้านล่าง (สร้างอัตโนมัติจาก JS) -->
+        <div class="slider-dots" id="slider-dots"></div>
+
+
+    </section>
+
+    <!-- ════════════════════════════
+         เกี่ยวกับเรา (About)
+    ════════════════════════════ -->
+    <section id="about">
+        <div class="section-inner">
+            <p class="section-label fade-in">เกี่ยวกับเรา</p>
+            <h2 class="section-title fade-in">รู้จัก <span>glu.</span></h2>
+            <p class="section-desc fade-in">เราคือผู้เชี่ยวชาญด้านเทคโนโลยีจอภาพที่มุ่งมั่นยกระดับการสื่อสารผ่านนวัตกรรม LED ระดับโลก</p>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════
+         บริการของเรา (Solutions)
+    ════════════════════════════ -->
+    <section id="solutions" style="background: var(--bg-accent);">
+        <div class="section-inner">
+            <p class="section-label fade-in" style="text-align:center;">บริการของเรา</p>
+            <h2 class="section-title fade-in" style="text-align:center;">LED <span>SOLUTIONS</span></h2>
+            <div class="grid-3 fade-in">
+                <div class="card">
+                    <h3>Outdoor Media</h3>
+                    <p>จอ LED ภายนอกอาคาร ทนแดด ทนฝน ความคมชัดสูงพิเศษ</p>
+                </div>
+                <div class="card">
+                    <h3>Indoor Display</h3>
+                    <p>โซลูชันจอภายในสำหรับห้างสรรพสินค้าและห้องประชุม</p>
+                </div>
+                <div class="card">
+                    <h3>Creative LED</h3>
+                    <p>นวัตกรรมจอโค้ง จอโปร่งใส และรูปแบบพิเศษตามจินตนาการ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════
+         ตัวเลขสถิติ (Stats Counter)
+         ** แก้ไข data-target="ตัวเลข" ของแต่ละการ์ด **
+    ════════════════════════════ -->
+    <section id="stats">
+        <div class="section-inner">
+            <p class="section-label fade-in" style="text-align:center;">ตัวเลขที่บอกทุกอย่าง</p>
+            <h2 class="section-title fade-in" style="text-align:center;">GLU Innovation <span>ในตัวเลข</span></h2>
+            <div class="stats-grid fade-in">
+
+                <!-- การ์ดที่ 1 : จำนวนจอ LED -->
+                <div class="stat-card" data-target="###" data-suffix="+">
+                    <span class="stat-icon">📺</span>
+                    <div class="stat-number"><span class="count">0</span><span class="unit">+</span></div>
+                    <div class="stat-label">จอ LED ติดตั้งแล้ว</div>
+                </div>
+
+                <!-- การ์ดที่ 2 : จำนวนลูกค้า -->
+                <div class="stat-card" data-target="###" data-suffix="+">
+                    <span class="stat-icon">🏢</span>
+                    <div class="stat-number"><span class="count">0</span><span class="unit">+</span></div>
+                    <div class="stat-label">ลูกค้าองค์กร</div>
+                </div>
+
+                <!-- การ์ดที่ 3 : จำนวนจังหวัด -->
+                <div class="stat-card" data-target="###" data-suffix="">
+                    <span class="stat-icon">📍</span>
+                    <div class="stat-number"><span class="count">0</span><span class="unit"></span></div>
+                    <div class="stat-label">จังหวัดที่ให้บริการ</div>
+                </div>
+
+                <!-- การ์ดที่ 4 : ปีประสบการณ์ -->
+                <div class="stat-card" data-target="###" data-suffix="">
+                    <span class="stat-icon">⭐</span>
+                    <div class="stat-number"><span class="count">0</span><span class="unit"></span></div>
+                    <div class="stat-label">ปีประสบการณ์</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════
+         โชว์เคสผลงาน (Portfolio)
+         ** แก้ไขข้อมูลโครงการใน scriptnew.js **
+    ════════════════════════════ -->
+    <section id="portfolio">
+        <div class="section-inner">
+            <p class="section-label fade-in" style="text-align:center;">ผลงานที่ผ่านมา</p>
+            <h2 class="section-title fade-in" style="text-align:center;">PROJECT <span>SHOWCASE</span></h2>
+
+            <!-- ปุ่ม Filter กรองประเภทผลงาน -->
+            <div class="filter-bar fade-in">
+                <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+                <button class="filter-btn" data-filter="outdoor">Outdoor LED</button>
+                <button class="filter-btn" data-filter="indoor">Indoor LED</button>
+                <button class="filter-btn" data-filter="retail">Retail</button>
+                <button class="filter-btn" data-filter="event">Event</button>
+            </div>
+
+            <!-- กริดแสดงผลงาน (สร้างอัตโนมัติจาก scriptnew.js) -->
+            <div class="portfolio-grid" id="portfolio-grid"></div>
+            <p id="portfolio-count" style="text-align:center; margin-top:28px; font-size:13px; color:#555;"></p>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════
+         นวัตกรรม (Innovation)
+    ════════════════════════════ -->
+    <section id="innovation" style="background: var(--bg-accent);">
+        <div class="section-inner">
+            <p class="section-label fade-in" style="text-align:center;">เทคโนโลยีล้ำสมัย</p>
+            <h2 class="section-title fade-in" style="text-align:center;">OUR <span>INNOVATION</span></h2>
+            <p class="section-desc fade-in">เทคโนโลยี 3D Illusion และระบบควบคุมอัจฉริยะที่ทำให้แบรนด์ของคุณโดดเด่นกว่าใคร</p>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════
+         ทำไมต้องเรา (Why Us)
+    ════════════════════════════ -->
+    <section id="why-us">
+        <div class="section-inner">
+            <p class="section-label fade-in" style="text-align:center;">เหตุผลที่เลือกเรา</p>
+            <h2 class="section-title fade-in" style="text-align:center;">WHY <span>glu.</span></h2>
+            <div class="grid-3 fade-in">
+                <div class="card">
+                    <h3>Expertise</h3>
+                    <p>ทีมวิศวกรผู้ชำนาญการ ประสบการณ์กว่า 10 ปี</p>
+                </div>
+                <div class="card">
+                    <h3>Quality</h3>
+                    <p>คัดสรรวัสดุเกรดพรีเมียม มาตรฐานสากล</p>
+                </div>
+                <div class="card">
+                    <h3>Service</h3>
+                    <p>ดูแลหลังการขาย 24/7 มั่นใจได้ในทุกการใช้งาน</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════
+         แผนที่พื้นที่ให้บริการ (Map)
+         ** แก้ไขข้อมูลจังหวัดใน scriptnew.js **
+    ════════════════════════════ -->
+    <section id="map-section">
+        <div class="section-inner">
+            <p class="section-label fade-in">พื้นที่ให้บริการ</p>
+            <h2 class="section-title fade-in">ครอบคลุม<span>ทั่วประเทศ</span></h2>
+            <p style="color:#888; margin-bottom:40px;" class="fade-in">คลิกที่ pin บนแผนที่หรือรายการด้านขวาเพื่อดูข้อมูลแต่ละพื้นที่</p>
+            <div class="map-layout fade-in">
+                <div>
+                    <div class="map-box">
+                        <svg id="th-map" viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M180,30 L220,25 L250,40 L265,70 L270,100 L280,130 L290,160 L295,190
+                                     L300,220 L295,250 L285,270 L280,295 L275,320 L268,345 L260,365
+                                     L255,385 L250,400 L245,415 L240,430 L235,445 L230,460
+                                     L228,475 L226,490 L224,505 L222,520 L220,540 L218,560
+                                     L215,575 L212,590 L208,605 L204,620 L200,630
+                                     L196,620 L193,605 L190,590 L188,575 L186,560
+                                     L184,545 L185,530 L186,515 L184,500 L182,485
+                                     L178,472 L172,458 L165,445 L158,430 L152,415
+                                     L148,400 L145,385 L140,365 L132,345 L125,325
+                                     L118,300 L112,275 L108,250 L105,225 L108,195
+                                     L112,165 L118,140 L128,115 L138,90 L152,65 L165,45 Z"
+                                fill="#141420" stroke="#1e1e30" stroke-width="1.5"/>
+                            <line x1="108" y1="195" x2="300" y2="195" stroke="#1e1e30" stroke-width="0.5"/>
+                            <line x1="112" y1="165" x2="290" y2="165" stroke="#1e1e30" stroke-width="0.5"/>
+                            <g class="map-pin" data-id="0" onclick="selectLoc(0)" transform="translate(195,242)">
+                                <circle r="18" fill="#00e5ff" opacity="0.08"/>
+                                <circle r="7" fill="#00e5ff"/>
+                                <circle r="3" fill="#000"/>
+                            </g>
+                            <g class="map-pin" data-id="1" onclick="selectLoc(1)" transform="translate(150,92)">
+                                <circle r="14" fill="#00e5ff" opacity="0"/>
+                                <circle r="5" fill="#00e5ff" opacity="0.5"/>
+                                <circle r="2" fill="#000"/>
+                            </g>
+                            <g class="map-pin" data-id="2" onclick="selectLoc(2)" transform="translate(162,530)">
+                                <circle r="14" fill="#00e5ff" opacity="0"/>
+                                <circle r="5" fill="#00e5ff" opacity="0.5"/>
+                                <circle r="2" fill="#000"/>
+                            </g>
+                            <g class="map-pin" data-id="3" onclick="selectLoc(3)" transform="translate(242,222)">
+                                <circle r="14" fill="#00e5ff" opacity="0"/>
+                                <circle r="5" fill="#00e5ff" opacity="0.5"/>
+                                <circle r="2" fill="#000"/>
+                            </g>
+                            <g class="map-pin" data-id="4" onclick="selectLoc(4)" transform="translate(222,265)">
+                                <circle r="14" fill="#00e5ff" opacity="0"/>
+                                <circle r="5" fill="#00e5ff" opacity="0.5"/>
+                                <circle r="2" fill="#000"/>
+                            </g>
+                            <g class="map-pin" data-id="5" onclick="selectLoc(5)" transform="translate(188,612)">
+                                <circle r="14" fill="#00e5ff" opacity="0"/>
+                                <circle r="5" fill="#00e5ff" opacity="0.5"/>
+                                <circle r="2" fill="#000"/>
+                            </g>
+                            <text x="195" y="270" text-anchor="middle" font-size="9" fill="#00e5ff" font-family="sans-serif">กรุงเทพฯ</text>
+                            <text x="146" y="80"  text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">เชียงใหม่</text>
+                            <text x="158" y="548" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">ภูเก็ต</text>
+                            <text x="260" y="218" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">ขอนแก่น</text>
+                            <text x="238" y="278" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">พัทยา</text>
+                            <text x="200" y="628" text-anchor="middle" font-size="8" fill="#555" font-family="sans-serif">หาดใหญ่</text>
+                        </svg>
+                    </div>
+                    <div class="map-legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#00e5ff;"></div>สาขาหลัก</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#00e5ff; opacity:0.4;"></div>พื้นที่ให้บริการ</div>
+                    </div>
+                </div>
+                <div class="loc-panel">
+                    <div class="loc-panel-head">พื้นที่ทั้งหมด</div>
+                    <ul class="loc-list" id="loc-list"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════
+         ติดต่อเรา (Contact)
+    ════════════════════════════ -->
+    <section id="contact" style="background: #000; text-align: center;">
+        <h2 class="section-title fade-in">START YOUR <span>PROJECT</span></h2>
+        <p class="fade-in">ปรึกษาเราวันนี้ เพื่อสร้างประสบการณ์ภาพที่เหนือระดับ</p>
+        <br>
+        <a href="#" class="btn-line fade-in">LINE @glu.led</a>
+    </section>
+
+    <!-- ════════════════════════════
+         Popup รายละเอียดผลงาน (Modal)
+    ════════════════════════════ -->
+    <div class="modal-bg" id="modal" onclick="closeModal(event)">
+        <div class="modal-box">
+            <div class="modal-head">
+                <span class="modal-head-title" id="modal-title"></span>
+                <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-thumb" id="modal-thumb"></div>
+                <div class="modal-meta" id="modal-meta"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scriptnew.js"></script>
+</body>
+</html>
