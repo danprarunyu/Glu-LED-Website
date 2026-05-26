@@ -86,6 +86,8 @@ nav ul li a:hover { color: var(--primary); }
 .btn-contact:hover {
     background: #00bcd4 !important;
     color: #000 !important;
+    cursor: pointer;
+     transform: translateY(-2px);
 }
 
 /* ปุ่มเมนู hamburger (มือถือ) */
