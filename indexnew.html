@@ -21,7 +21,7 @@
         <nav>
             <ul id="nav-list">
                 <li><a href="#about">รู้จัก glu.</a></li>
-                <li><a href="#solutions">โซลูชันจอภาพ</a></li>
+                <li><a href="#products-section">สินค้า</a></li>
                 <li><a href="#portfolio">โชว์เคสผลงาน</a></li>
                 <li><a href="#innovation">นวัตกรรม</a></li>
                 <li><a href="#why-us">ทำไมต้องเรา</a></li>
@@ -124,6 +124,81 @@
 
 
     </section>
+
+    <!-- สินค้าจอ LED (Products) -->
+    
+    <section id="products-section">
+        <div class="section-inner">
+
+            <!-- หัวข้อ -->
+            <p class="section-label fade-in" style="text-align:center;">สินค้าของเรา</p>
+            <h2 class="section-title fade-in" style="text-align:center;">LED <span>PRODUCTS</span></h2>
+            <p class="section-desc fade-in">เลือกชมจอ LED คุณภาพสูงที่เหมาะกับทุกการใช้งาน พร้อมรายละเอียดสเปคและราคา</p>
+
+            <!-- ปุ่ม Filter ประเภทสินค้า -->
+            <div class="filter-bar fade-in">
+                <button class="filter-btn active" data-pfilter="all">ทั้งหมด</button>
+                <button class="filter-btn" data-pfilter="outdoor">Outdoor LED</button>
+                <button class="filter-btn" data-pfilter="indoor">Indoor LED</button>
+                <button class="filter-btn" data-pfilter="rental">Rental LED</button>
+                <button class="filter-btn" data-pfilter="creative">Creative LED</button>
+            </div>
+
+            <!-- กริดสินค้า (สร้างอัตโนมัติจาก products.js) -->
+            <div class="products-grid" id="products-grid"></div>
+
+        </div>
+    </section>
+
+    <!-- ════════════════════════════
+         Popup รายละเอียดสินค้า (Product Modal)
+         วางแยกจาก portfolio modal
+    ════════════════════════════ -->
+    <div class="pmodal-bg" id="product-modal">
+        <div class="pmodal-box">
+
+            <!-- Header -->
+            <div class="pmodal-head">
+                <div class="pmodal-head-left">
+                    <span class="pmodal-badge" id="pmodal-badge"></span>
+                    <span class="pmodal-title" id="pmodal-title"></span>
+                </div>
+                <button class="pmodal-close" id="pmodal-close" aria-label="ปิด">&#215;</button>
+            </div>
+
+            <!-- Body -->
+            <div class="pmodal-body">
+
+                <!-- รูปสินค้า -->
+                <div class="pmodal-img-wrap">
+                    <img id="pmodal-img" src="" alt="" class="pmodal-img">
+                </div>
+
+                <!-- รายละเอียด -->
+                <div class="pmodal-detail">
+
+                    <!-- ราคา -->
+                    <div class="pmodal-price-block">
+                        <span class="pmodal-price-label">ราคาเริ่มต้น</span>
+                        <span class="pmodal-price" id="pmodal-price"></span>
+                    </div>
+
+                    <!-- สเปคหลัก -->
+                    <div class="pmodal-specs" id="pmodal-specs"></div>
+
+                    <!-- คำอธิบาย -->
+                    <p class="pmodal-desc" id="pmodal-desc"></p>
+
+                    <!-- ปุ่ม CTA -->
+                    <div class="pmodal-actions">
+                        <a href="https://www.facebook.com/glu.led" class="pmodal-btn-primary" id="pmodal-cta" target="_blank">ติดต่อสอบถาม</a>
+                        <button class="pmodal-btn-secondary" id="pmodal-close2">ปิด</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ════════════════════════════
          เกี่ยวกับเรา (About)
@@ -369,7 +444,6 @@
             </div>
         </div>
     </div>
-
     <script src="scriptnew.js"></script>
 </body>
 </html>
